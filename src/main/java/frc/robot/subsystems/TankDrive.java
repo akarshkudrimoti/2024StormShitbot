@@ -14,7 +14,7 @@ public class TankDrive extends SubsystemBase{
 
     private TalonSRX rearLeftMotor = new TalonSRX(RobotMap.DRIVE_LEFT_FOLLOW);
     rearLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-    this.rearLeftMotor.set(ControlMode.Follower, RobotMap.DRIVE_LEFT_MASTER);
+    .rearLeftMotor.set(ControlMode.Follower, RobotMap.DRIVE_LEFT_MASTER);
 
 
     private TalonSRX frontRightMotor = new TalonSRX(RobotMap.DRIVE_RIGHT_MASTER);
@@ -22,7 +22,7 @@ public class TankDrive extends SubsystemBase{
 
     private TalonSRX rearRightMotor = new TalonSRX(RobotMap.DRIVE_RIGHT_FOLLOW);
     rearRightMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-    this.rearRightMotor.set(ControlMode.Follower, RobotMap.DRIVE_LEFT_MASTER);
+    rearRightMotor.set(ControlMode.Follower, RobotMap.DRIVE_LEFT_MASTER);
 
 
     rearLeftMotor.follow(frontLeftMotor);
