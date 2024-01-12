@@ -21,7 +21,7 @@ public class TankDrive extends SubsystemBase{
     public TankDrive() {
         // Set up any additional configuration if needed
         this.rearLeftMotor.follow(frontLeftMotor);
-        this.rearLeftMotor.follow(frontRightMotor);
+        this.rearRightMotor.follow(frontRightMotor);
     }
 
     // Method to drive the robot with tank drive
