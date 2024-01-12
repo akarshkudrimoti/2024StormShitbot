@@ -38,7 +38,8 @@ public class TankDrive extends SubsystemBase{
 
     // Method to drive the robot with tank drive
     public void tankDrive(double leftSpeed, double rightSpeed) {
-        .tankDrive(leftSpeed, rightSpeed);
+        frontLeftMotor.set(ControlMode.PercentOutput, leftSpeed);
+        frontRightMotor.set(ControlMode.PercentOutput, rightSpeed);
     }
 
     // Additional methods or configuration as needed
