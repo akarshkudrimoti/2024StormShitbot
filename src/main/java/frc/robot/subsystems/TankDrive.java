@@ -9,31 +9,19 @@ public class TankDrive extends SubsystemBase{
 
     // Define Talon SRX motor controllers
     //change this to wpilib shit
-    private TalonSRX frontLeftMotor = new TalonSRX(RobotMap.DRIVE_LEFT_MASTER);
-    frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-
-    private TalonSRX rearLeftMotor = new TalonSRX(RobotMap.DRIVE_LEFT_FOLLOW);
-    rearLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-    .rearLeftMotor.set(ControlMode.Follower, RobotMap.DRIVE_LEFT_MASTER);
-
-
-    private TalonSRX frontRightMotor = new TalonSRX(RobotMap.DRIVE_RIGHT_MASTER);
-    frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-
-    private TalonSRX rearRightMotor = new TalonSRX(RobotMap.DRIVE_RIGHT_FOLLOW);
-    rearRightMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
-    rearRightMotor.set(ControlMode.Follower, RobotMap.DRIVE_LEFT_MASTER);
-
-
-    rearLeftMotor.follow(frontLeftMotor);
-    rearLeftMotor.follow(frontRightMotor);
-
+    // Define Talon SRX motor controllers
+    private TalonSRX frontLeftMotor = new TalonSRX(0);
+    private TalonSRX rearLeftMotor = new TalonSRX(1);
+    private TalonSRX frontRightMotor = new TalonSRX(2);
+    private TalonSRX rearRightMotor = new TalonSRX(3);
 
     // Create DifferentialDrive instanc
 
     // Constructor
     public TankDrive() {
         // Set up any additional configuration if needed
+        this.rearLeftMotor.follow(frontLeftMotor);
+        this.rearLeftMotor.follow(frontRightMotor);
     }
 
     // Method to drive the robot with tank drive
@@ -45,11 +33,6 @@ public class TankDrive extends SubsystemBase{
     // Additional methods or configuration as needed
 }
 
-
-
-
-    
-}
 
     
 
