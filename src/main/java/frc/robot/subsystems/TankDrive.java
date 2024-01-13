@@ -14,11 +14,16 @@ public class TankDrive extends SubsystemBase{
     private TalonSRX frontRightMotor = new TalonSRX(2);
     private TalonSRX rearRightMotor = new TalonSRX(3);
 
+
+
     // Create DifferentialDrive instanc
 
     // Constructor
     public TankDrive() {
         // Set up any additional configuration if needed
+        frontLeftMotor.setInverted(true);
+        frontRightMotor.setInverted(true);
+
         this.rearLeftMotor.follow(frontLeftMotor);
         this.rearRightMotor.follow(frontRightMotor);
     }
